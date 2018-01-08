@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播组件</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+		<link rel="stylesheet" href="slider.css" />
+	</head>
+	<body>
+		<div class="ui-slider" id="slider">
+			<a class="prev" href="javascript:;">上一页</a>
+			<a class="next" href="javascript:;">下一页</a>
+			<ul class="list">
+				<li>
+					<img src="https://img.alicdn.com/imgextra/i2/1879660321/TB2p3JrhgnH8KJjSspcXXb3QFXa_!!1879660321.jpg" />
+				</li>
+				<li>
+					<img src="https://img.alicdn.com/imgextra/i1/1879660321/TB2Cu8Fg9_I8KJjy0FoXXaFnVXa_!!1879660321.jpg" />
+				</li>
+				<li>
+					<img src="https://img.alicdn.com/imgextra/i2/1879660321/TB2SOB3hb_I8KJjy1XaXXbsxpXa_!!1879660321.jpg" />
+				</li>
+				<li>
+					<img src="https://img.alicdn.com/imgextra/i3/1879660321/TB2e0WZcazB9uJjSZFMXXXq4XXa_!!1879660321.jpg" />
+				</li>
+			</ul>
+			<ul class="ind">
+				<li></li><li></li><li></li><li></li>
+			</ul>
+		</div>
+		<script src="slider.js"></script>
+		<script>
+			var slider = new Slider({
+				elem: '#slider'
+			});
+		</script>
+	</body>
+</html>
