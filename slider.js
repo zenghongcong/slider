@@ -19,6 +19,15 @@
 		}
 	}
 	
+	//是否存在class
+	function hasClass(el, className){
+		if (el.classList){
+  			return el.classList.contains(className);
+		}else{
+  			return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+		}
+	}
+	
 	function Slider(options){
 		if(!(this instanceof Slider)){
 			return new Slider(options);
@@ -77,7 +86,7 @@
 					addClass(prevElem, 'transition');
 					addClass(prevElem, prevClass);
 					removeClass(currElem, type);
-				}, 0);
+				}, 50);
 			}
 			
 			setTimeout(function(){
@@ -118,8 +127,18 @@
 			prev && prev.addEventListener('click', function(e){
 				_this.prev();
 			});
+			
 			next && next.addEventListener('click', function(e){
 				_this.next();
+			});
+			
+			Array.prototype.forEach.call(_this.ind, function(item, index){
+				item.addEventListener('click', function(){
+					if(hasClass(item, 'active')){
+						return
+					}
+					_this.jump(index + 1);
+				});
 			});
 		}
 	}
